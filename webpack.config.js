@@ -7,11 +7,16 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.js',
-        libraryTarget: 'commonjs2'
+        library: libraryName,      
+        libraryTarget: 'umd',
+        publicPath: '/dist/',
+        umdNamedDefine: true
     },
     resolve: {
         alias: {
-            'styledbymoi': path.join(__dirname, 'src')
+            'styledbymoi': path.join(__dirname, 'src'),
+            'react': path.resolve(__dirname, './node_modules/react'),
+            'react-dom': path.resolve(__dirname, './node_modules/react-dom'),  
         }
     },
     module: {
@@ -30,5 +35,19 @@ module.exports = {
     ],
     devServer: {
         contentBase: 'docs/'
-    }
+    },
+    externals: {      
+        "react": {          
+            commonjs: "react",          
+            commonjs2: "react",          
+            amd: "React",          
+            root: "React"      
+        },      
+        "react-dom": {          
+            commonjs: "react-dom",          
+            commonjs2: "react-dom",          
+            amd: "ReactDOM",          
+            root: "ReactDOM"      
+        }  
+    } 
 }
