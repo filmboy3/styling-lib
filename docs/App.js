@@ -8,7 +8,7 @@ const App = () =>
         <H2>Hello H2!</H2>
         <H3>Hello H3!</H3>
         <H4>Hello H4!</H4>
-        <Button>Hello Button!</Button>
+        <Button type="submit">Hello Button!</Button>
        
     </div>
 
