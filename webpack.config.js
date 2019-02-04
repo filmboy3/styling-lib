@@ -6,7 +6,8 @@ module.exports = {
     entry: './docs/entry.js',
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'index.js',
+        libraryTarget: 'commonjs2'
     },
     resolve: {
         alias: {
